@@ -1,0 +1,13 @@
+service: primerProyectoSls # NOTE: update this with your service name
+
+provider:
+  name: aws
+  runtime: nodejs10.x
+
+functions:
+  hello:
+    handler: handler.hello
+    events:
+      - http:
+          method: get
+          path: hello

@@ -1,0 +1,22 @@
+service: curso-sls-hola-mundo # NOTE: update this with your service name
+
+plugins:
+  - serverless-offline
+
+provider:
+  name: aws
+  runtime: nodejs10.x
+
+functions:
+  hello:
+    handler: handler.hello
+    events:
+      - http:
+          path: hola-mundo/{name}
+          method: get
+  showUser:
+      handler: handler.showUser
+      events:
+        - http:
+            path: user
+            method: post
